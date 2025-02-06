@@ -7,9 +7,10 @@
 def currency_converted_list(amount: float):
     currencies = ["RUB", "ARS", "NL", "AUD", "MAD"]
     rates = [2.98, 0.82, 0.17, 1.9622, 0.208]
-    for i in currencies:
-        for j in rates: 
-            converted = f"I will get {round((j * amount), 2)} {i} from the sale of {amount} conicoins"
-    return converted
+    for i in range(len(currencies)):
+        converted = ""
+        for j in range(len(rates)): 
+            converted = f"I will get {round((rates[j] * amount), 2)} {currencies[i]} from the sale of {amount} conicoins"
+        print(converted)
 coni = float(input("Please, enter the number of conicoins you have: "))
 print(f"{currency_converted_list(coni)}")
